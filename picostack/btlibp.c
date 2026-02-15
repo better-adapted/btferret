@@ -1,4 +1,4 @@
-/********* Version 24 *********/
+/********* Version 24.1 *********/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1541,6 +1541,7 @@ int init_blue_ex(char *filename,int hcin)
 #ifdef PICOSTACK
   packet_size(220);
   stream = NULL;
+  readline(NULL,NULL,NULL);
   readret = readline(NULL,filename,s);
 #else     
   stream = fopen(filename,"r");
@@ -13728,6 +13729,12 @@ int readline(FILE *stream,char *devs,char *s)
   {
   static int devn = 0;
   int n,c;
+  
+  if(s == NULL)
+    {
+    devn = 0;
+    return(0);
+    }
   
   n = 0;
   s[0] = 0;
