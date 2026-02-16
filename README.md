@@ -1492,11 +1492,11 @@ The HM10 should work with its default factory settings (send AT+RENEW),
 ```
 C code
 
-Download: hm10\_client.c
+Download: hm10_client.c
 
 PYTHON code
 
-Download: hm10\_client.py
+Download: hm10_client.py
 ```
 
 
@@ -9165,7 +9165,7 @@ Example packet
 [9]  = 0A Opcode
 [10] = 06 ID
 [11][12] = 0002 Number of bytes starting from [13]
-[13]-[16] = 2 bytes of parameters
+[13][14] = 2 bytes of parameters
 
 These packets come in request/reply pairs. A device sends
 a Request_Opcode:ID where the ID is a free choice. It

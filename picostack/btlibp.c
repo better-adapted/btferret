@@ -1978,7 +1978,7 @@ int init_blue_ex(char *filename,int hcin)
     sprintf(buf,"Node %d",dev[0]->node);
     strcpy(dev[0]->name,buf);    
     NPRINT "\nThis local device has been allocated NODE = %d\n",dev[0]->node);
-    NPRINT "It should be added to the %s file as follows:\n",filename);
+    NPRINT "It should be added to the device data as follows:\n");
     NPRINT "DEVICE=name (e.g. My Pi) TYPE=MESH  NODE=choose (e.g. 1)  ADDRESS=%s\n",baddstr(dev[0]->baddr,0));
     }
   else
@@ -13735,7 +13735,7 @@ int readline(FILE *stream,char *devs,char *s)
     devn = 0;
     return(0);
     }
-  
+    
   n = 0;
   s[0] = 0;
   do
